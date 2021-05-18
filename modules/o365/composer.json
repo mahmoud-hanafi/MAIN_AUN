@@ -1,0 +1,21 @@
+{
+    "name": "drupal/o365",
+    "type": "drupal-module",
+    "description": "Office 365 Connector module",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/o365",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/o365",
+        "source": "http://cgit.drupalcode.org/o365"
+    },
+    "require": {
+        "microsoft/microsoft-graph": "^1.5",
+        "drupal/oauth2_client": "^2.0@beta",
+        "oomphinc/composer-installers-extender": "^1.1"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    }
+}

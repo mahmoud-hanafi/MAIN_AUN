@@ -1,0 +1,22 @@
+{% set i = 0 %}
+<div{{ attributes }}>
+  {%- for item in items -%}
+    {% set i = i + 1 %}
+      {% if i == 1 %}
+        <div class="image-item">
+          <a href="{{file_url(item.content['#item'].entity.uri.value)}}" class="zoomGallery" title="" data-rel="lightGallery">
+            <span class="icon-expand"><i class="fa fa-camera"></i></span>
+            <img src="{{file_url(item.content['#item'].entity.uri.value|image_style('thumbnail'))}}" alt=""  class="hidden" />
+          </a>
+          {{ item.content }}
+        </div>
+      {% else %}
+        <div class="image-item">
+          <a href="{{file_url(item.content['#item'].entity.uri.value)}}" class="zoomGallery hidden" title="" data-rel="lightGallery">
+            <img src="{{file_url(item.content['#item'].entity.uri.value|image_style('thumbnail'))}}" alt=""  class="hidden" />
+          </a>
+        </div>
+      {% endif %}
+  {%- endfor -%}
+</div>
+

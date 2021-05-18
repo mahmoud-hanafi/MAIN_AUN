@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drupal Module Upgrader analysis report</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,700,600' rel='stylesheet' type='text/css' />
+    <style type="text/css">
+    <!--
+
+body {
+  width: 80%;
+  color: #343434;
+  margin: 1em auto;
+  font-family: 'Open Sans', Verdana, sans-serif;
+}
+
+details {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 2em;
+  display: list-item;
+  list-style: none;
+}
+
+details summary {
+  padding: 1em;
+  margin-bottom: 1em;
+  display: list-item;
+  cursor: pointer;
+}
+
+details.error summary {
+  background-color: #ffd5d5;
+}
+
+details.warning summary {
+  background-color: #fff3bb;
+}
+
+a {
+  color: #095cb1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+aside {
+  font-style: italic;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+.group {
+  border: 1px solid #ececec;
+  padding: 1em;
+  display: block;
+}
+
+.group > summary {
+  padding: 0;
+  color: #c8c8c8;
+  margin-bottom: 0;;
+  font-weight: bold;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: list-item;
+}
+
+.group[open] > summary {
+  margin-bottom: 1em;
+}
+
+.group > details:last-child {
+  margin-bottom: 0;
+}
+
+    -->
+    </style>
+  </head>
+  <body>
+    <h1>Drupal Module Upgrader analysis report</h1>
+      <details open="true" class="group">
+      <summary></summary>
+          <details class="error">
+      <summary><code>hook_menu()</code> has been removed from Drupal 8.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/1800686">All functionality of <code>hook_menu()</code> replaced</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2177901">Dynamic routes are now defined in <code>MODULE.routing.yml</code></a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2119699">Page callbacks have been converted to controller classes</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2089605">Route naming convention</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2165243">Contextual links are now plugins defined in <code>MODULE.links.contextual.yml</code></a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2007444">Local actions are now plugins defined in <code>MODULE.links.action.yml</code></a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2044515">Local tasks and now plugins defined in <code>MODULE.links.task.yml</code></a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2228089">Menu links are now defined in <code>MODULE.links.menu.yml</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 57</li>
+            </ul>
+                  <aside>Flagged by _flag_hook:menu</aside>    </details>
+    <details class="error">
+      <summary><code>drupal_exit()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2017339"><code>drupal_exit()</code> removed</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 459</li>
+            </ul>
+                  <aside>Flagged by _function_call:drupal_exit</aside>    </details>
+    <details class="error">
+      <summary><code>drupal_goto()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2023537"><code>drupal_goto()</code> removed</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 334</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 418</li>
+            </ul>
+                  <aside>Flagged by _function_call:drupal_goto</aside>    </details>
+    <details class="error">
+      <summary><code>element_children()</code> is now a method of the <code>Element</code> class.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2173683"><code>element_*</code> functions moved into <code>Element</code> class</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 467</li>
+            </ul>
+                  <aside>Flagged by _function_call:element_children</aside>    </details>
+    <details class="error">
+      <summary><code>node_load()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2266845">Entities are now classed objects implementing <code>EntityInterface</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 215</li>
+            </ul>
+                  <aside>Flagged by _function_call:node_load</aside>    </details>
+    <details class="error">
+      <summary><code>node_save()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2266845">Entities are now classed objects implementing <code>EntityInterface</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 117</li>
+            </ul>
+                  <aside>Flagged by _function_call:node_save</aside>    </details>
+    <details class="error">
+      <summary><code>node_delete()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2266845">Entities are now classed objects implementing <code>EntityInterface</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 416</li>
+            </ul>
+                  <aside>Flagged by _function_call:node_delete</aside>    </details>
+    <details class="error">
+      <summary><code>taxonomy_term_save()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2266845">Entities are now classed objects implementing <code>EntityInterface</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 208</li>
+            </ul>
+                  <aside>Flagged by _function_call:taxonomy_term_save</aside>    </details>
+    <details class="error">
+      <summary>The Field API CRUD functions have been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2012896">Fields and field instances are now entities</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 15</li>
+            </ul>
+                  <aside>Flagged by _function_call:field_create_field</aside>    </details>
+    <details class="error">
+      <summary>The Field API CRUD functions have been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2012896">Fields and field instances are now entities</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 20</li>
+            </ul>
+                  <aside>Flagged by _function_call:field_create_instance</aside>    </details>
+    <details class="error">
+      <summary><code>form_set_error()</code> is now a method of <code>FormStateInterface</code>.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2121003">Form functions moved into <code>FormStateInterface</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 306</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 519</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 524</li>
+            </ul>
+                  <aside>Flagged by _function_call:form_set_error</aside>    </details>
+    <details class="error">
+      <summary><code>form_state_values_clean()</code> is now a method of <code>FormStateInterface</code>.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2121003">Form functions moved into <code>FormStateInterface</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 499</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 542</li>
+            </ul>
+                  <aside>Flagged by _function_call:form_state_values_clean</aside>    </details>
+    <details class="error">
+      <summary><code>l()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2346779"><code>l()</code> replaced by URL generation API</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 114</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 257</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 400</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 13</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 50</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 50</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 65</li>
+            </ul>
+                  <aside>Flagged by _function_call:l</aside>    </details>
+    <details class="error">
+      <summary><code>get_t()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2021435"><code>get_t()</code> replaced by <code>t()</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 53</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 102</li>
+            </ul>
+                  <aside>Flagged by _function_call:get_t</aside>    </details>
+    <details class="error">
+      <summary><code>theme()</code> has been renamed to <code>_theme()</code>, and should never be called directly.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2195739"><code>theme()</code> renamed to <code>_theme()</code> and should not be called directly</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 164</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 348</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 488</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 56</li>
+            </ul>
+                  <aside>Flagged by _function_call:theme</aside>    </details>
+    <details class="error">
+      <summary><code>url()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2346779"><code>url()</code> replaced by URL generation API</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 30</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 36</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 36</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 37</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 38</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 40</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 46</li>
+            </ul>
+                  <aside>Flagged by _function_call:url</aside>    </details>
+    <details class="error">
+      <summary><code>variable_get()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2183531">The Variable API has been removed</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 201</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 201</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\resolution_center.inc, line 218</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 55</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 67</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 104</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.install, line 117</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\simple_node_importer_config.inc, line 22</li>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\includes\simple_node_importer_config.inc, line 59</li>
+            </ul>
+                  <aside>Flagged by _function_call:variable_get</aside>    </details>
+    <details class="error">
+      <summary><code>watchdog()</code> has been removed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2270941"><code>watchdog()</code> is deprecated</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 331</li>
+            </ul>
+                  <aside>Flagged by _function_call:watchdog</aside>    </details>
+    <details class="warning">
+      <summary>Many common functions, shared variables, and constants have been renamed.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2324935">The global theme variables have been replaced by an ActiveTheme object</a></li>
+              </ul>
+      
+                      </details>
+    <details class="error">
+      <summary>The signature of hook_form_alter() has changed in Drupal 8.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Form%21form.api.php/function/hook_form_alter/8"><code>hook_form_alter()</code> documentation</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 193</li>
+            </ul>
+                  <aside>Flagged by hook_form_alter</aside>    </details>
+    <details class="warning">
+      <summary>Static permissions are now defined in <code>MODULE.permissions.yml</code>.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/2311427">Defining permissions in <code>MODULE.permissions.yml</code></a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer\simple_node_importer.module, line 122</li>
+            </ul>
+            <p class="fixable">This issue can be fixed automatically.</p>      <aside>Flagged by hook_permission</aside>    </details>
+    <details class="error">
+      <summary>Module info files' <code>core</code> key must have a value of <code>8.x</code>.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/1935708"><code>.info</code> files are now <code>.info.yml</code> files</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer/simple_node_importer.info</li>
+            </ul>
+                  <aside>Flagged by info</aside>    </details>
+    <details class="error">
+      <summary>Info files must contain a <code>type</code> key.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/1935708#type"><code>.info</code> files are now <code>.info.yml</code> files</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer/simple_node_importer.info</li>
+            </ul>
+                  <aside>Flagged by info</aside>    </details>
+    <details class="error">
+      <summary>Module info files' <code>configure</code> key must be a route name, not a path.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/1935708#configure"><code>.info</code> files are now <code>.info.yml</code> files</a></li>
+              </ul>
+      
+            <h5>Files Affected</h5>
+      <ul>
+              <li>C:\Users\SAKSOFT079\Sites\devdesktop\CSVimportD8/modules/simple_node_importer/simple_node_importer.info</li>
+            </ul>
+                  <aside>Flagged by info</aside>    </details>
+    <details class="error">
+      <summary>Automated web tests must be in a PSR-4 namespace, and unit tests must be converted to PHPUnit.</summary>
+
+      
+            <h5>Documentation</h5>
+      <ul>
+                <li><a target="_blank" href="https://www.drupal.org/node/1543796">Namespacing of automated tests has changed</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2301125"><code>getInfo()</code> in test classes replaced by doc comments</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/1710766">Test classes should define a <code>$modules</code> property declaring dependencies</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/1911318">SimpleTest tests now use empty &quot;testing&quot; profile by default</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/1829160">New <code>KernelTestBase</code> class for API-level integration tests</a></li>
+                <li><a target="_blank" href="https://www.drupal.org/node/2012184">PHPUnit added to Drupal core</a></li>
+              </ul>
+      
+                      </details>
+
+    </details>
+    </body>
+</html>

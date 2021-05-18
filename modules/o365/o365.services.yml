@@ -1,0 +1,16 @@
+services:
+  o365.authentication:
+    class: Drupal\o365\AuthenticationService
+    arguments: ['@config.factory', '@user.private_tempstore', '@o365.constants', '@o365.logger']
+  o365.constants:
+    class: Drupal\o365\ConstantsService
+    arguments: []
+  o365.graph:
+    class: Drupal\o365\GraphService
+    arguments: ['@o365.authentication', '@o365.logger']
+  o365.logger:
+    class: Drupal\o365\O365LoggerService
+    arguments: ['@logger.factory', '@messenger']
+  o365.helpers:
+    class: Drupal\o365\HelperService
+    arguments: ['@date.formatter']

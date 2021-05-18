@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - newslettersignup
+name: 'Newsletter Signup'
+type: newsletter_signup_list
+description: 'Contains the list of newsletter signups.'
+help: 'Contains the list of newsletter signups.'
+new_revision: false
+preview_mode: 1
+display_submitted: true

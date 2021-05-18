@@ -1,0 +1,4 @@
+profile_block:
+  css:
+    theme:
+      css/o365_profile.block.css: {}

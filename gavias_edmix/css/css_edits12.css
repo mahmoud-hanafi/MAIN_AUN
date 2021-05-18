@@ -1,0 +1,111 @@
+
+@media (min-width: 991px) and (max-width: 1206px) {
+  .navigation .gva_menu > li > a {
+    font-size: 13px;
+  }
+}
+.block-dropdown-language .dropbutton-wrapper ul.dropbutton > li.dropbutton-toggle .dropbutton-arrow {
+  right: 35%;
+}
+@media (min-width: 992px){
+  .col-md-3 {
+      width: 43%;
+  }
+}
+@media (max-width: 1200px) and (min-width: 991px){
+  .footer .col-md-2 {
+      width: 56.66667%;
+  }
+}
+.event-footer-block {
+  padding: 0;
+}
+.department-side-block a {
+  font-weight: bold;
+}
+.department-side-block .views-field-field-department-image {
+  height: 100px;
+  border-radius: 10px;
+}
+#block-views-block-department-block-block-1 .block-title span {
+  font-size: 20px;
+  color: #002068;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .event-date i {
+  position: relative;
+  top: 25px;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .event-date time {
+  margin-left: 19px;
+}
+.event-block-2 .content-inner .event-content-inner .event-content {
+  padding: 5px;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .event-image img {
+  border-radius: 15px;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .content-inner .event-content span {
+  color: #202020;
+}
+.event-block-2 .content-inner {
+  padding-left: 300px;
+}
+.event-block-2 .event-image {
+  width: 262px;
+}
+@media (max-width: 786px) {
+  .event-block-2 .event-image {
+    width: 180px;
+  }
+  .event-block-2 .content-inner {
+    padding-left: 200px;
+  }
+}
+.event-block-2 .post-title {
+  margin-bottom: 0px;
+}
+@media (max-width: 550px) {
+  #block-gavias-edmix-content .view-content-wrap > .item .content-inner .event-content span {
+    font-size: 14px;
+  }
+  #block-gavias-edmix-content .view-content-wrap > .item .event-date time {
+    font-size: 12px;
+  }
+}
+/* M.M edits############################ */
+#home_counter_div .gsc-column {
+  transition: all .3s ease-in-out;
+}
+#home_counter_div .gsc-column:hover {
+  transform: translate(0,-20px);
+}
+.news_home_more .btn-theme {
+  background: #00CEFF;
+  color: #fff;
+  border-radius: 30px;
+  border: 2px solid #00CEFF;
+}
+.home-events .highlight-icon {
+  color: #00CEFF;
+}
+.home-events .content-action a {
+  color: #FFB900;
+}
+#why_btn_link a {
+  background: rgba(0, 206, 255, 0.6);
+  color: #fff;
+  border: 2px solid #fff;
+}
+#why_btn_link a:hover {
+  background: #fff;
+  color: rgba(0, 206, 255, 0.6);
+  border: 2px solid #fff;
+}
+.after_content{
+  background-image: url(/engineering/sites/default/files/values.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  box-sizing: border-box;
+  background-size: cover;
+  height: 770px;
+}

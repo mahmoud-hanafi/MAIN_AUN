@@ -1,0 +1,6 @@
+services:
+  we_megamenu_deploy.commands:
+    class: \Drupal\we_megamenu_deploy\Commands\WeMegamenuDeployCommands
+    arguments: ['@we_megamenu_deploy.exporter', '@we_megamenu_deploy.importer']
+    tags:
+      - { name: drush.command }

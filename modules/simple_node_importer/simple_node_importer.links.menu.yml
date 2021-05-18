@@ -1,0 +1,8 @@
+simple_node_importer.config_form:
+  route_name: simple_node_importer.config_form
+  title: 'Simple Node Import Settings'
+  parent: system.admin_config_development
+simple_node_importer.node_resolution_center:
+  route_name: simple_node_importer.node_resolution_center
+  title: 'Resolution Center'
+  parent: simple_node_importer.config_form

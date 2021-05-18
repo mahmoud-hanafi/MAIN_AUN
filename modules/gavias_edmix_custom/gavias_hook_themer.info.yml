@@ -1,0 +1,6 @@
+type: module
+name : Gavias Edmix Themer
+description : Gavias Edmix Themer
+package: gavias
+core: '8.x'
+project: 'gavias_hook_themer'

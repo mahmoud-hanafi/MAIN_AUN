@@ -1,0 +1,13 @@
+name: 'Metatag: Google Scholar'
+type: module
+description: Provides meta tags for indexing scholarly articles in Google Scholar.
+# core: 8.x
+package: SEO
+dependencies:
+  - metatag:metatag
+
+# Information added by Drupal.org packaging script on 2017-02-27
+version: '8.x-1.0-beta1'
+core: '8.x'
+project: 'metatag_google_scholar'
+datestamp: 1488214085

@@ -1,0 +1,25 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_company
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_email
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_name
+    - node.type.newsletter_signup_list
+  module:
+    - user
+id: node.newsletter_signup_list.teaser
+targetEntityType: node
+bundle: newsletter_signup_list
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_newsletter_signup_company: true
+  field_newsletter_signup_email: true
+  field_newsletter_signup_name: true

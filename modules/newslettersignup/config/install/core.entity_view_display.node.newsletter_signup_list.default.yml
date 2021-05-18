@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_company
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_email
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_name
+    - node.type.newsletter_signup_list
+  module:
+    - user
+id: node.newsletter_signup_list.default
+targetEntityType: node
+bundle: newsletter_signup_list
+mode: default
+content:
+  field_newsletter_signup_company:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_newsletter_signup_email:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_newsletter_signup_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

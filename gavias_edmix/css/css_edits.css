@@ -1,0 +1,216 @@
+
+@media (min-width: 991px) and (max-width: 1206px) {
+  .navigation .gva_menu > li > a {
+    font-size: 12px;
+  }
+}
+.block-dropdown-language .dropbutton-wrapper ul.dropbutton > li.dropbutton-toggle .dropbutton-arrow {
+  right: 25%;
+}
+@media (min-width: 992px) and (max-width: 1200px){
+  .footer .col-md-3 {
+      width: 43%;
+  }
+}
+@media (max-width: 1200px) and (min-width: 991px){
+  .footer .col-md-2 {
+      width: 56.66667%;
+  }
+}
+.event-footer-block {
+  padding: 0;
+}
+.department-side-block a {
+  font-weight: bold;
+}
+.department-side-block .views-field-field-department-image {
+  height: 100px;
+  border-radius: 10px;
+}
+#block-views-block-department-block-block-1 .block-title span {
+  font-size: 20px;
+  color: #0d7992;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .event-date i {
+  position: relative;
+  top: 25px;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .event-date time {
+  margin-left: 19px;
+}
+.event-block-2 .content-inner .event-content-inner .event-content {
+  padding: 5px;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .event-image img {
+  border-radius: 15px;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .content-inner .event-content span {
+  color: #202020;
+  transition: all .3s ease-in-out;
+}
+#block-gavias-edmix-content .view-content-wrap > .item .content-inner .event-content span:hover {
+  color: #4582FF;
+}
+.event-block-2 .content-inner {
+  padding-left: 300px;
+}
+.event-block-2 .event-image {
+  width: 262px;
+}
+@media (max-width: 786px) {
+  .event-block-2 .event-image {
+    width: 180px;
+  }
+  .event-block-2 .content-inner {
+    padding-left: 200px;
+  }
+}
+.event-block-2 .post-title {
+  margin-bottom: 0px;
+}
+@media (max-width: 550px) {
+  #block-gavias-edmix-content .view-content-wrap > .item .content-inner .event-content span {
+    font-size: 14px;
+  }
+  #block-gavias-edmix-content .view-content-wrap > .item .event-date time {
+    font-size: 12px;
+  }
+}
+/* M.M edits############################ */
+#home_counter_div .gsc-column {
+  transition: all .3s ease-in-out;
+}
+#home_counter_div .gsc-column:hover {
+  transform: translate(0,-20px);
+}
+.news_home_more .btn-theme {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 60px;
+  background: #fff;
+  color: #006fa8;
+  border-radius: 30px;
+  border: 1px solid #006fa8;
+}
+.news_home_more .btn-theme:hover , .news_home_more .btn-theme:focus , .news_home_more .btn-theme:active{
+  padding-left: 25px;
+  padding-right: 25px;
+  background: #006fa8;
+  color: #fff;
+  border: 1px solid #006fa8;
+}
+.home-events .highlight-icon {
+  color: #0d7992;
+}
+
+.after_content{
+  background-image: url(/medicine/sites/default/files/values.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  box-sizing: border-box;
+  background-size: cover;
+  height: 650px;
+}
+
+#block-valuesgoals{
+	color : white;
+	padding-top: 9%;
+    width: 54%;
+}
+
+#block-valuesgoals h4{
+	color: white;
+}
+
+#block-valuesgoals h3{
+	color: #FFB900;
+}
+
+#block-valuesgoals h3 strong {
+    border-bottom: 2px solid #FFB900 !important;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+#block-postgradoverview1{
+  background-image: url(/engineering/sites/default/files/postgrad1.png);
+  min-height: 400px;
+}
+
+#block-postgradoverview2{
+  background-image: url(/engineering/sites/default/files/postgrad2.png);
+  min-height: 400px;
+}
+#block-coursescounter h2 {
+  text-align: center;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.bluish {
+  color: #00CEFF;
+}
+.home_page_search .views-exposed-form .form-item {
+  width: 48%;
+}
+.home_page_search .views-exposed-form .form-item select {
+  border-color: #fff;
+  color: #fff;
+  background: rgba(25, 23, 18,0.8);
+  width: 68%;
+  border-radius: 10px;
+  height: 40px;
+}
+.home_page_search .views-exposed-form form {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.faded-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  background-color: #fff;
+  opacity: .7;
+  z-index: 1 !important;
+}
+#block-homepagewelcome .row-wrapper {
+  position: relative;
+  margin-top: 30px;
+  height: 190px;
+}
+.faded-section h2 {
+  color: #006fa8;
+}
+.faded-section p {
+  color: #000;
+}
+.why_faculty_header {
+  margin: 0px;
+  width: 100%;
+}
+.light-gray {
+  color: #ddd;
+}
+.padding-img {
+  padding-top: 55px;
+  padding-left: 70px;
+}
+.padding-img p:first-child {
+  font-size: 37px;
+  line-height: 1.2;
+  margin-bottom: 44px;
+}
+
+.padding-img a {
+  background: rgba(0, 206, 255, .6);
+  font-size: 20px;
+  border: 2px solid #fff;
+}
+.padding-img  .btn-theme:hover {
+  border: 2px solid #fff;
+}
+.breadcrumb-content-main h2 {
+  font-size: 40px;
+}

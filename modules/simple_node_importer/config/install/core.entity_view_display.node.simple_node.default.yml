@@ -1,0 +1,45 @@
+# core.entity_view_display.node.simple_node.default.yml
+langcode: en
+status: true
+dependencies:
+    config:
+        - field.field.node.simple_node.field_select_content_type
+        - field.field.node.simple_node.field_upload_csv
+        - field.field.node.simple_node.field_select_entity_type
+        - node.type.simple_node
+    module:
+        - node
+        - options
+        - file
+        - text
+        - user
+id: node.simple_node.default
+targetEntityType: node
+bundle: simple_node
+mode: default
+content:
+    field_select_content_type:
+        label: hidden
+        type: list_default
+        region: content
+        weight: 2
+        settings: {  }
+        third_party_settings: {  }
+    field_upload_csv:
+        label: hidden
+        type: file_default
+        weight: 4
+        region: content
+        settings:
+            use_description_as_link_text: true
+        third_party_settings: {  }
+    field_select_entity_type:
+        label: hidden
+        type: list_default
+        weight: 1
+        region: content
+        settings: {  }
+        third_party_settings: {  }  
+    links:
+        weight: 105    
+hidden: {  }

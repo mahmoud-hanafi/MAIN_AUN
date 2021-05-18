@@ -1,0 +1,25 @@
+entity.drupal_slider_slide:
+  title: 'Drupal Slider'
+  route_name: entity.drupal_slider_slide.list
+  parent: system.admin_config_media
+  weight: 10
+entity.drupal_slider_slide.add_form:
+  title: 'Create slide'
+  route_name: entity.drupal_slider_slide.add_form
+  parent: entity.drupal_slider_slide
+  weight: 90  
+entity.drupal_slider_slide.list:
+  title: 'Slide lists'
+  route_name: entity.drupal_slider_slide.list
+  parent: entity.drupal_slider_slide
+  weight: 91
+entity.drupal_slider_slide_grouping.add_form:
+  title: 'Create slide group'
+  route_name: entity.drupal_slider_slide_grouping.add_form
+  parent: entity.drupal_slider_slide
+  weight: 92   
+entity.drupal_slider_slide_grouping.list:
+  title: 'Slide group lists'
+  route_name: entity.drupal_slider_slide_grouping.list
+  parent: entity.drupal_slider_slide
+  weight: 93  

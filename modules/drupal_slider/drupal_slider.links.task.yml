@@ -1,0 +1,22 @@
+drupal_slider.add_slide:
+  route_name: entity.drupal_slider_slide.add_form
+  title: Create Slide
+  base_route: entity.drupal_slider_slide.add_form
+
+drupal_slider.list_slide:
+  route_name: entity.drupal_slider_slide.list
+  title: Slide Lists
+  base_route: entity.drupal_slider_slide.add_form
+  weight: 2
+
+drupal_slider.add_group:
+  route_name: entity.drupal_slider_slide_grouping.add_form
+  title: Create Slide Group
+  base_route: entity.drupal_slider_slide.add_form
+  weight: 3
+
+drupal_slider.list_group:
+  route_name: entity.drupal_slider_slide_grouping.list
+  title: Group lists
+  base_route: entity.drupal_slider_slide.add_form
+  weight: 4

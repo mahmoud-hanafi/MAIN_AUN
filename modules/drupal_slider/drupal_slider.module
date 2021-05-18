@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Provides Drupal slider integration with Views.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function drupal_slider_help($route_name) {
+  if ($route_name == 'help.page.drupal_slider') {
+    $output = file_get_contents(dirname(__FILE__) . '/README.md');
+    return $output;
+  }
+  return '';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function drupal_slider_theme($existing, $type, $theme, $path) {
+  return [
+    'drupal_slider_layers' => [
+      'variables' => [
+        'layers_attributes' => NULL,
+        'background_img' => NULL,
+        'layers' => NULL,
+        'id' => NULL,
+      ],
+    ],
+    'drupal_slider_views_style' => [
+      'variables' => [
+        'id' => NULL,
+      ],
+    ],
+  ];
+}

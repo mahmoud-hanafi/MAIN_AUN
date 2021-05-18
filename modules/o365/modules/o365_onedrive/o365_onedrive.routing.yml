@@ -1,0 +1,24 @@
+
+o365_onedrive.one_drive_list:
+  path: '/my-onedrive'
+  defaults:
+    _controller: '\Drupal\o365_onedrive\Controller\OneDriveListController::listFiles'
+    _title: 'My OneDrive'
+  requirements:
+    _permission: 'access o365_onedrive page'
+
+o365_onedrive.shared_one_drive_list:
+  path: '/shared-with-me'
+  defaults:
+    _controller: '\Drupal\o365_onedrive\Controller\OneDriveListController::listSharedFiles'
+    _title: 'Shared with me'
+  requirements:
+    _permission: 'access o365_onedrive page'
+
+o365_onedrive.one_drive_list_folder:
+  path: '/my-onedrive/{folder}'
+  defaults:
+    _controller: '\Drupal\o365_onedrive\Controller\OneDriveListController::listFiles'
+    _title: 'My OneDrive'
+  requirements:
+    _permission: 'access o365_onedrive page'

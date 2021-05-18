@@ -1,0 +1,22 @@
+slider.pro:
+  title: 'slider Pro'
+  remote: 'https://github.com/bqworks/slider-pro'
+  license:
+    name: 'Apache License'
+    url: 'https://github.com/bqworks/slider-pro/blob/master/README.md'
+    gpl-compatible: false
+  js:
+    /libraries/slider-pro/dist/js/jquery.sliderPro.min.js: {}
+  css:
+    theme:
+      /libraries/slider-pro/dist/css/slider-pro.css: {}
+  dependencies:
+    - core/jquery
+drupal_slider.load:
+  js:
+    js/ds-slider-pro-load.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+    - drupal_slider/slider.pro

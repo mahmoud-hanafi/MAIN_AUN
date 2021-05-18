@@ -1,0 +1,5 @@
+services:
+  o365_sso.user_login_form_subscriber:
+    class: Drupal\o365_sso\Routing\UserLoginFormRouteSubscriber
+    tags:
+      - { name: event_subscriber }

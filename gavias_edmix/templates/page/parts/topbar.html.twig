@@ -1,0 +1,76 @@
+<div class="topbar">
+  <div class="container">
+    <div class="row">
+
+      <div class="topbar-left col-sm-8">
+        <div id="top_bar_info"> {{ render_block('topbarinfo') }} </div>
+        <div id="top_bar_lang">
+		<div class="dropdown">
+		  <button class="dropbtn">
+		     <span class='current-language'>
+			{% if language == 'ar'%}
+العربية			
+                        {% else %}
+				English
+                        {% endif%}
+
+		     </span>
+                     <i class="fa fa-caret-down"></i>
+		  </button>
+		  <div class="dropdown-content">
+		    <a href="{{ base_url }}{{current_path}}" class='eng-language'>English</a>
+		    <a href="{{ base_url }}/ar{{current_path}}" class='ar-language'>العربية</a>
+		  </div>
+		</div>
+        </div>
+      </div>
+
+      <div class="topbar-right col-sm-4 col-xs-6">
+        <div id="top_bar_user">
+          {% if custom_account == '' %}
+            <div class="login_link">  
+            </div>  
+          {% else %}
+            {{ render_block('useraccountmenu') }} 
+          {% endif %}  
+        </div>
+        <div class="social-list">
+          {% if custom_social_link.facebook %}
+            <a href="{{custom_social_link.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+          {% endif %}
+          {% if custom_social_link.twitter %}
+            <a  target="_blank" href="{{custom_social_link.twitter}}"><i class="fa fa-twitter"></i></a>
+          {% endif %}
+          {% if custom_social_link.youtube %}
+            <a  target="_blank" href="{{custom_social_link.youtube}}"><i class="fa fa-youtube"></i></a>
+          {% endif %}
+          {% if custom_social_link.google %}
+            <a  target="_blank" href="{{custom_social_link.google}}"><i class="fa fa-google-plus"></i></a>
+          {% endif %}
+          {% if custom_social_link.skype %}
+            <a  target="_blank" href="{{custom_social_link.skype}}"><i class="fa fa-skype"></i></a>
+          {% endif %}
+          {% if custom_social_link.instagram %}
+            <a  target="_blank" href="{{custom_social_link.instagram}}"><i class="fa fa-instagram"></i></a>
+          {% endif %}
+          {% if custom_social_link.dribbble %}
+            <a  target="_blank" href="{{custom_social_link.dribbble}}"><i class="fa fa-dribbble"></i></a>
+          {% endif %}
+          {% if custom_social_link.linkedin %}
+            <a  target="_blank" href="{{custom_social_link.linkedin}}"><i class="fa fa-linkedin-square"></i></a>
+          {% endif %}
+          {% if custom_social_link.pinterest %}
+            <a  target="_blank" href="{{custom_social_link.pinterest}}"><i class="fa fa-pinterest"></i></a>
+          {% endif %}
+          {% if custom_social_link.vimeo %}
+            <a  target="_blank" href="{{custom_social_link.vimeo}}"><i class="fa fa-vimeo-square"></i></a>
+          {% endif %}
+          {% if custom_social_link.tumblr %}
+            <a  target="_blank" href="{{custom_social_link.tumblr}}"><i class="fa fa-tumblr-square"></i></a>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

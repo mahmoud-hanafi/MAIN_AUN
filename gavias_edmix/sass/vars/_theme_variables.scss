@@ -1,0 +1,20 @@
+@import 'vars/_variables';
+ 
+// images folder path of theme 
+$base-theme-image-path : '../images'!default;
+
+//------- FONTS
+$fa-font-path							: "../fonts/" !default;
+$font-icon 								: "FontAwesome"!default;
+$font-icon-2                     : "gva-icon"!default;
+$font-second                     : 'Raleway', sans-serif !default;
+//-------- COLOR --------------
+$black 			 					   : #000 !default; 
+$white                           : #fff !default;  
+$nocolor                         : transparent !default;
+//--------- COLORS  
+$theme-color                      : #4582FF!default;  //#0030B8    
+$theme-color-rgba					    : rgba(254, 184, 0, 0.8)!default; 
+$theme-color-second               : #04D2C8 !default;
+$border-color-dark                : rgba(255, 255, 255, 0.1)!default; 
+$border-color                     : rgba(0, 0, 0, 0.1)!default;

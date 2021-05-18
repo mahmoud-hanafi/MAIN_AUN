@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Profile module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function o365_profile_theme() {
+  return [
+    'o365_profile_block' => [
+      'variables' => [
+        'data' => NULL,
+        'displayName' => NULL,
+        'imageData' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}

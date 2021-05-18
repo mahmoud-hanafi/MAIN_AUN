@@ -1,0 +1,14 @@
+# node.type.simple_node_importer.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - simple_node_importer # This is the name of the module we're using for this example
+name: 'Simple Node Importer'
+type: simple_node
+description: 'This is a simple node importer content type.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

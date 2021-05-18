@@ -1,0 +1,10 @@
+<div class="paragraphs-video-upload media-wrapper">
+   {% set i = 0 %}
+   {%- for item in items -%}
+      {% set i = i + 1 %}
+      <video class="video-upload" id="player-{{random()}}"  style="max-width:100%;" poster="{{ theme_path }}/images/video-thumbnail.jpg" preload="auto" controls playsinline webkit-playsinline>
+         <source src="{{file_url(item.content['#file'].uri.value)}}" type="video/mp4">
+      </video>
+   {%- endfor -%}
+</div>
+

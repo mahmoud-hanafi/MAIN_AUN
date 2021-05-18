@@ -1,0 +1,128 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+<article{{ attributes}}>
+  <div class="single-course">
+    <div class="image course-images lightGallery">
+      {% if product.field_course_images %}
+        {{ product.field_course_images }} 
+      {% endif %}
+      {% if video_link %}
+          <a class="video-link popup-video" href="{{ video_link }}"><i class="fa fa-video-camera"></i></a>
+      {% endif %}
+    </div>
+    
+    <div class="course-content">
+      <h1{{ title_attributes.addClass('post-title') }}>{{ product.title }}</h1>
+      
+      <div class="add-to-cart-content-inner">
+        {{product.variation_price|raw}}
+        {{product.variations|raw}}
+      </div>
+       
+      <div class="course-meta clearfix">
+        {% if product.field_course_teacher %}
+          <div class="meta-item">
+            <div class="icon icon-teacher"></div>
+            <div class="content">
+              <div class="lab">{{ 'Teacher'|t }}</div>
+              <div class="val">{{ product.field_course_teacher }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.field_course_category %}
+          <div class="meta-item">
+            <div class="icon icon-category"></div>
+            <div class="content">
+              <div class="lab">{{ 'Category'|t }}</div>
+              <div class="val">{{ product.field_course_category }}</div>
+            </div>
+          </div>
+        {% endif %}  
+    
+        {% if product.field_course_duration %}
+          <div class="meta-item">
+            <div class="icon icon-duration"></div>
+            <div class="content">
+              <div class="lab">{{ 'Duration Time'|t }}</div>
+              <div class="val">{{ product.field_course_duration }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.field_course_level %}
+          <div class="meta-item">
+            <div class="icon icon-level"></div>
+            <div class="content">
+              <div class="lab">{{ 'Level'|t }}</div>
+              <div class="val">{{ product.field_course_level }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.field_course_student %}
+          <div class="meta-item">
+            <div class="icon icon-students"></div>
+            <div class="content">
+              <div class="lab">{{ 'Students'|t }}</div>
+              <div class="val">{{ product.field_course_student }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.variation_price %}
+          <div class="meta-item">
+            <div class="icon icon-price"></div>
+            <div class="content">
+              <div class="lab">{{ 'Price'|t }}</div>
+              <div class="val">{{ product.variation_price }}</div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="post-content">
+        <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+          {{- product|without('field_course_level', 'field_course_features', 'field_course_teacher', 'field_course_duration', 'field_course_images', 'comment', 'field_course_video', 'variation_price', 'variations' ,'field_course_category', 'field_course_comment') -}}
+        </div>
+      </div>
+        
+      <div class="course-features">
+        {{ product.field_course_features }}
+      </div>
+
+      <div class="course-lessons block-info">
+        <div class="block-info-title">{{'Lessons Of Course'}}</div>
+        <div class="content-inner">{{ drupal_view('lessons', 'lesson_block') }}</div>
+      </div>
+      
+      {% if product.field_course_comment %}
+        <div id="node-single-comment">
+          {{ product.field_course_comment }}
+        </div>
+      {% endif %}
+    
+
+    </div>
+  </div>
+</article>

@@ -1,0 +1,8 @@
+o365.settings_form:
+  route_name: o365.settings_form
+  title: 'Office 365 settings'
+  base_route: o365.settings_form
+o365.api_settings_form:
+  title: 'API settings'
+  route_name: o365.api_settings_form
+  base_route: o365.settings_form

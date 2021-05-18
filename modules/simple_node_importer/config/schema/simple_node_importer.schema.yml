@@ -1,0 +1,6 @@
+simple_node_importer.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    simple_node_importer_allow_add_term:
+      type: integer

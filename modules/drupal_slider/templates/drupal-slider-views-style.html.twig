@@ -1,0 +1,12 @@
+{{attached}}
+<div class="slider-pro" id="{{id}}">	
+	<div class="sp-slides">{{ rows }}</div>
+	{% if rows.0['#view'].style_plugin.render_tokens.0['{{ drupal_slider_thumbnails }}']|render|striptags is not empty %}
+		<div class="sp-thumbnails">
+			{% for row in rows %}
+			{% set img = row['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ drupal_slider_thumbnails }}']|render|striptags %}
+				<img class="sp-thumbnail" src="{{ img }}"/>
+			{% endfor %}
+		</div>	
+	{% endif %}
+</div>

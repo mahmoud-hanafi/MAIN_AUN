@@ -1,0 +1,13 @@
+o365.settings_form:
+  title: 'Office 365 Settings'
+  route_name: o365.settings_form
+  description: 'Settings for the Office 365 Connector module'
+  parent: system.admin_config_system
+  weight: 99
+
+o365.api_settings_form:
+  title: 'API Settings'
+  route_name: o365.api_settings_form
+  description: 'API settings for the Office 365 Connector module'
+  parent: o365.settings_form
+  weight: 0

@@ -1,0 +1,61 @@
+{%
+  set classes = [
+    'node',
+    'clearfix',
+  ]
+%}
+<!-- Start Display course for teaser page -->
+{% if teaser == true %} 
+  <div class="lesson-block lesson-item">
+    <i class="icon {{lesson_icon}}"></i>
+    <span class="lesson-content">
+      <span class="lesson-title"><a href="{{ url }}">{{ label }}</a>
+        {% if node.body.value is not empty %}
+          <a class="gva-pajax" data-href="{{ url }}" rel="bookmark"><span>{{'Preview'|t}}</span><span style="color: red;">{{role_admin}}</span></a>
+        {% endif %}
+      </span>
+      <span class="lesson-duration">{{node.field_lesson_time.value}}</span>
+    </span>
+  </div>
+<!-- End Display course for teaser page -->
+{% else %}
+<!-- Start Display course for detail page -->
+<article{{ attributes.addClass(classes).addClass('lesson-single') }}>
+  <div class="row">
+    <div class="col-sm-8 col-xs-12">
+      <div class="hidden">
+        <div id="preview-lesson-content">
+          <div class="clearfix">
+            <div class="post-title">{{ label }}</div>
+            <div class="post-content">
+              {{ content.body }}
+            </div>  
+          </div>
+        </div> 
+      </div> 
+      <div class="single-lesson-content">
+        <h1 class="post-title">{{ label }}</h1>
+        <div class="post-content">
+          {{ lesson_content|raw }}
+        </div> 
+      </div> 
+    </div>
+    <div class="col-sm-4 col-xs-12 lessons">
+      <div class="back-to-course"><span class="btc-text">{{ 'Back to the course'|t }}</span> {{content.field_lecture_course}} </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" href="#panel-lession-1" class="">{{ 'Lessons'|t }} <i class="icon gv-icon-160"></i></a>
+          </h4>
+        </div>
+        <div id="panel-lession-1" class="panel-collapse collapse in">
+            <div class="panel-body">
+              {{ drupal_view('lessons', 'lesson_block', course_id) }}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</article>
+<!-- End Display article for detail page -->
+{% endif %}

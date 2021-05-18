@@ -1,0 +1,17 @@
+name: 'Simple Node Importer'
+description: 'Allows you to import and Map fields with CSV column from UI.'
+package: 'Simple Node Importer'
+# core: 8.x
+scripts:
+  - js/simple_node_importer.js
+stylesheets:
+  all:
+    - css/simple_node_importer.css
+type: module
+dependencies: {  }
+
+# Information added by Drupal.org packaging script on 2019-04-24
+version: '8.x-1.0'
+core: '8.x'
+project: 'simple_node_importer'
+datestamp: 1556098397

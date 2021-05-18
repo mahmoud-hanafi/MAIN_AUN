@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Provides hook_help for we_megamenu_deploy.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function we_megamenu_deploy_help($route_name, RouteMatchInterface $arg) {
+  switch ($route_name) {
+    case 'help.page.we_megamenu_deploy':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module making the configuration of Drupal 8 MegaMenu exportable and importable, so it can helps developers to share the configuration between them.') . '</p>';
+      // Add a link to the Drupal.org project.
+      $output .= '<p>';
+      $output .= t('Visit the <a href=":project_link">Drupal 8 MegaMenu Deploy project page</a> on Drupal.org for more information.', [':project_link' => 'https://www.drupal.org/project/we_megamenu_deploy']);
+      $output .= '</p>';
+
+      return $output;
+  }
+}

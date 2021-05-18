@@ -1,0 +1,15 @@
+.o365-profile-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.o365-profile-block--image {
+  margin-right: 20px;
+}
+
+.o365-profile-block--image img {
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+}

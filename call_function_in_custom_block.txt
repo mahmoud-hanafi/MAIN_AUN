@@ -1,0 +1,4 @@
+<?php
+$language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+print _handle_home_news_block($language );
+?>

@@ -1,0 +1,8 @@
+
+o365_outlook_mail.my_mail_controller_getMail:
+  path: 'my-latest-mail'
+  defaults:
+    _controller: '\Drupal\o365_outlook_mail\Controller\MyMailController::getMail'
+    _title: 'My latest mail'
+  requirements:
+    _permission: 'access o365_outlook_mail page'

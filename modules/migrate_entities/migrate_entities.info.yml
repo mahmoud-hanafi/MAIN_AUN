@@ -1,0 +1,23 @@
+name: 'Migrate Entities'
+description: 'Allows you to import and migrate content only from csv only.'
+package: 'Custom Migration'
+# core: 8.x
+type: module
+
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_source_csv
+  - drupal:migrate_plus
+  - drupal:migrate_tools
+  - drupal:migrate_file
+  - drupal:simple_node_importer
+
+# Information added by Drupal.org packaging script on 2019-05-07
+# core: '8.x'
+# datestamp: 1556098397
+
+# Information added by Drupal.org packaging script on 2019-05-10
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'migrate_entities'
+datestamp: 1557490395

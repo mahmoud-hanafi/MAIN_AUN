@@ -1,0 +1,57 @@
+entity.drupal_slider_slide.list:
+  path: '/admin/config/media/drupal-slider/slide/list'
+  defaults:
+    _entity_list: drupal_slider_slide
+    _title: 'Drupal Slider - Slide lists'
+  requirements:
+    _permission: 'administer drupal slider'
+entity.drupal_slider_slide.add_form:
+  path: '/admin/config/media/drupal-slider/slide/add'
+  defaults:
+    _entity_form: drupal_slider_slide.add
+    _title: 'Drupal Slider - Create slide'
+  requirements:
+    _permission: 'administer drupal slider'
+entity.drupal_slider_slide.edit_form:
+  path: '/admin/config/media/drupal-slider/slide/{drupal_slider_slide}/edit'
+  defaults:
+    _entity_form: drupal_slider_slide.edit
+    _title: 'Drupal Slider - Edit slide'
+  requirements:
+    _permission: 'administer drupal slider'    
+entity.drupal_slider_slide.delete_form:
+  path: '/admin/config/media/drupal-slider/slide/{drupal_slider_slide}/delete'
+  defaults:
+    _entity_form: drupal_slider_slide.delete
+    _title: 'Drupal Slider - Delete slide'
+  requirements:
+    _permission: 'administer drupal slider'
+    
+entity.drupal_slider_slide_grouping.list:
+  path: '/admin/config/media/drupal-slider/slide-group/list'
+  defaults:
+    _entity_list: drupal_slider_slide_grouping
+    _title: 'Drupal Slider - Slide group lists'
+  requirements:
+    _permission: 'administer drupal slider'
+entity.drupal_slider_slide_grouping.add_form:
+  path: '/admin/config/media/drupal-slider/slide-group/add'
+  defaults:
+    _entity_form: drupal_slider_slide_grouping.add
+    _title: 'Drupal Slider - Create slide group'
+  requirements:
+    _permission: 'administer drupal slider'
+entity.drupal_slider_slide_grouping.edit_form:
+  path: '/admin/config/media/drupal-slider/slide-group/{drupal_slider_slide_grouping}/edit'
+  defaults:
+    _entity_form: drupal_slider_slide_grouping.edit
+    _title: 'Drupal Slider - Edit slide group'
+  requirements:
+    _permission: 'administer drupal slider'    
+entity.drupal_slider_slide_grouping.delete_form:
+  path: '/admin/config/media/drupal-slider/slide-group/{drupal_slider_slide_grouping}/delete'
+  defaults:
+    _entity_form: drupal_slider_slide_grouping.delete
+    _title: 'Drupal Slider - Delete slide group'
+  requirements:
+    _permission: 'administer drupal slider'

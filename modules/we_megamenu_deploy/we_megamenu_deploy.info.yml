@@ -1,0 +1,13 @@
+name: WeMegemenu Deploy
+description: We megamenu deploy, the solution export and import your configuration.
+type: module
+package: 'WeMegaMenu'
+core: 8.x
+dependencies:
+  - default_content:default_content
+  - we_megamenu:we_megamenu
+
+# Information added by Drupal.org packaging script on 2019-10-25
+version: '8.x-1.0-alpha4'
+project: 'we_megamenu_deploy'
+datestamp: 1572032288

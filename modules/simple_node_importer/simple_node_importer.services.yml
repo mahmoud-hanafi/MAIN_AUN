@@ -1,0 +1,10 @@
+# config.factory helps us read data out of the config file in the "install" directory.
+services:
+  snp.get_services:
+    class: Drupal\simple_node_importer\Services\GetServices
+    arguments: ["@config.factory"]
+
+  node:
+    class: Drupal\simple_node_importer\ParamConverter\SimpleNodeParamConverter
+    tags:
+      - { name: paramconverter }

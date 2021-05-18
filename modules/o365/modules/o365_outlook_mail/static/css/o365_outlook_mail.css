@@ -1,0 +1,8 @@
+tr.unread {
+  font-weight: bold;
+  background-color: #FFE4E1;
+}
+
+tr.unread.odd {
+  background-color: #FFC0CB;
+}

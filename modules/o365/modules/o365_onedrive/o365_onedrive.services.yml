@@ -1,0 +1,7 @@
+services:
+  logger.channel.o365_onedrive:
+    parent: logger.channel_base
+    arguments: ['o365_onedrive']
+  o365_onedrive.get_files:
+    class: Drupal\o365_onedrive\GetFilesAndFoldersService
+    arguments: ['@o365.graph']

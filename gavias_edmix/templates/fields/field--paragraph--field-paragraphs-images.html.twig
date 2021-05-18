@@ -1,0 +1,55 @@
+{% set i = 0 %}
+<div{{ attributes.addClass('lightGallery') }}>
+   
+   {% if items|length == 1 %}
+      {%- for item in items -%}
+         <div class="image-item item-columns">
+            <a href="{{file_url(item.content['#item'].entity.uri.value)}}" class="zoomGallery" title="" data-rel="lightGallery">
+               <span class="icon-expand"><i class="fa fa-expand"></i></span>
+               <img src="{{file_url(item.content['#item'].entity.uri.value)}}" alt="" />
+            </a>
+         </div>
+      {%- endfor -%}
+   {% endif %}   
+
+   {% if items|length == 2 %}
+      <div class="lg-block-grid-2 md-block-grid-2 sm-block-grid-2 xs-block-grid-2 gutter-10">
+         {%- for item in items -%}
+            <div class="image-item item-columns">
+               <a href="{{file_url(item.content['#item'].entity.uri.value)}}" class="zoomGallery" title="" data-rel="lightGallery">
+                  <span class="icon-expand"><i class="fa fa-expand"></i></span>
+                  <img src="{{file_url(item.content['#item'].entity.uri.value|image_style('medium'))}}" alt="" />
+               </a>
+            </div>
+         {%- endfor -%}
+      </div>
+   {% endif %} 
+
+   {% if items|length == 3 %}
+      <div class="lg-block-grid-3 md-block-grid-3 sm-block-grid-3 xs-block-grid-3 gutter-10">
+         {%- for item in items -%}
+            <div class="image-item item-columns">
+               <a href="{{file_url(item.content['#item'].entity.uri.value)}}" class="zoomGallery" title="" data-rel="lightGallery">
+                  <span class="icon-expand"><i class="fa fa-expand"></i></span>
+                  <img src="{{file_url(item.content['#item'].entity.uri.value|image_style('medium'))}}" alt=""  />
+               </a>
+            </div>
+         {%- endfor -%}
+      </div>
+   {% endif %}
+
+   {% if items|length > 3 %}
+      <div class="lg-block-grid-4 md-block-grid-4 sm-block-grid-4 xs-block-grid-2 gutter-10">
+         {%- for item in items -%}
+            <div class="image-item item-columns">
+               <a href="{{file_url(item.content['#item'].entity.uri.value)}}" class="zoomGallery" title="" data-rel="lightGallery">
+                  <span class="icon-expand"><i class="fa fa-expand"></i></span>
+                  <img src="{{file_url(item.content['#item'].entity.uri.value|image_style('small'))}}" alt="" />
+               </a>
+            </div>
+         {%- endfor -%}
+      </div>
+   {% endif %}
+
+</div>
+

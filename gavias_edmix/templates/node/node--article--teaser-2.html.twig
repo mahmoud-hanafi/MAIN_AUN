@@ -1,0 +1,43 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix post-block',
+  ]
+%}
+
+
+{% if node_index == 1 %}
+  <div{{ attributes.addClass(classes).addClass('node-index-1') }}>
+    <div class="post-thumbnail">
+      {{ content.field_image }}
+      <div class="icons-format">
+        {% if 'video' in node.field_post_format.value %}<span class="icon-video fa fa-video-camera"></span>{% endif %}
+        {% if 'gallery' in node.field_post_format.value %}<span class="icon-gallery fa fa-camera"></span>{% endif %}
+      </div>
+    </div>
+    <div class="post-content">
+      <div class="post-meta">{{ content.field_post_category }}<span class="post-created"> {{ date }}</span></div>
+      <h3{{ title_attributes.addClass('post-title') }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>
+      <div class="post-body">{{content.body}}</div>
+    </div>
+  </div>  
+{% else %}
+  <div{{ attributes.addClass(classes).addClass('small-post') }}>
+    <div class="post-image">
+      <a href="{{url}}"><img src="{{ node.field_image.entity.uri.value | image_style('thumbnail') }}" alt="" /></a>
+      <div class="icons-format">
+        {% if 'video' in node.field_post_format.value %}<span class="icon-video fa fa-video-camera"></span>{% endif %}
+        {% if 'gallery' in node.field_post_format.value %}<span class="icon-gallery fa fa-camera"></span>{% endif %}
+      </div>
+    </div> 
+    <div class="post-content">
+      <div class="post-title"><a href="{{url}}">{{ label }}</a></div>
+      <div class="post-meta">{{ content.field_post_category }}<span class="post-created"> {{ date }}</span> </div>
+    </div>
+  </div> 
+{% endif %}

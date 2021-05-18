@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="campaign-block featured-campaign clearfix">      
+   <div class="campaign-block-inner">
+      <div class="left">
+        <div class="image lightGallery">
+          {{ product.field_campaign_images }}
+          {% if video_link %}
+            <a class="video-link popup-video" href="{{ video_link }}"><i class="fa fa-video-camera"></i></a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="right">
+        <div class="campaign-content">   
+          <div class="campaign-info"><h4 class="title"><a href="{{ product_url }}" rel="bookmark">{{ title }}</a></h4></div> 
+          <div class="campaign-info"><div class="summary"> {{product.body}}</div></div>
+          <div class="funded">
+            <div class="progress">
+              <div class="progress-bar" data-progress-animation="{{funded}}%">
+                <span class="percentage">{{ funded_label }}%</span>
+              </div>
+            </div>
+          </div>
+          <div class="content-raised"><span class="raised">{{raised}}</span> {{'Raised'|t}} / <span class="goal">{{ product.field_campaign_goal}}</span> {{'Goal'|t}} / <span class="days"><span class="text-theme">{{ days_left }}</span> {{'Days left'|t}} </span></div>
+          <div class="content-action"><a class="btn-theme" href="{{ product_url }}">{{ 'Donate now'|t }}</a></div> 
+        </div>
+      </div>  
+   </div>
+</div>

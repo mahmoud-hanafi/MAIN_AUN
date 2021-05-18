@@ -1,0 +1,110 @@
+<?php
+
+/**
+ * @file
+ * This file is used to install module.
+ */
+
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_uninstall().
+ */
+function simple_node_importer_uninstall() {
+  $bundle = 'simple_node';
+
+  // Load all nodes of Simple Node Content type.
+  $nodes = \Drupal::entityQuery('node')->condition('type', $bundle)->execute();
+
+  // Delete all nodes when module gets uninstalled.
+  if (!empty($nodes)) {
+    entity_delete_multiple('node', $nodes);
+  }
+
+  // Load simple node node type bundle.
+  $entity_type = NodeType::load($bundle);
+
+  // Delete content type when module gets uninstalled.
+  if (!empty($entity_type)) {
+    $entity_type->delete();
+  }
+
+  $table = 'node_resolution';
+  if (db_table_exists($table)) {
+    db_drop_table($table);
+  }
+}
+
+/**
+ * Implements hook_schema().
+ */
+function simple_node_importer_schema() {
+  $schema = [];
+  $table = 'node_resolution';
+  if (!db_table_exists($table)) {
+    $schema['node_resolution'] = [
+      'description' => 'The base table for saving rows which fails while importing Nodes.',
+      'fields' => [
+        'serid' => [
+          'description' => 'The primary identifier for a node resolution.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        // Defaults to NULL in order to avoid a brief period of potential
+        // deadlocks on the index.
+        'sni_nid' => [
+          'description' => 'The primary identifier for a simple node importer.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'data' => [
+          'description' => 'A serialized array of function names called to load an object corresponding',
+          'type' => 'blob',
+          'not null' => FALSE,
+          'size' => 'big',
+          'serialize' => TRUE,
+          'translatable' => TRUE,
+        ],
+        'reference' => [
+          'description' => 'It will be a reference to uploaded file',
+          'type' => 'varchar',
+          'length' => 128,
+          'not null' => TRUE,
+          'default' => '',
+        ],
+        'status' => [
+          'type' => 'varchar',
+          'not null' => TRUE,
+          'default' => 0,
+          'length' => 50,
+          'description' => 'It contains serialize data of suuccess and failure data.',
+        ],
+        'created' => [
+          'description' => 'The Unix timestamp when the node was created.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'changed' => [
+          'description' => 'The Unix timestamp when the node was most recently saved.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+      ],
+      'unique keys' => [
+        'serid' => ['serid'],
+      ],
+      'foreign keys' => [
+        'node_import' => [
+          'table' => 'node',
+          'columns' => ['sni_nid' => 'nid'],
+        ],
+      ],
+      'primary key' => ['serid'],
+    ];
+  }
+  return $schema;
+}

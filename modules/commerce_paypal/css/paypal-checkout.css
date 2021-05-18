@@ -1,0 +1,6 @@
+@media all and (min-width: 61em) {
+  .path-cart .paypal-buttons-container {
+    float: right;
+    width: 40%;
+  }
+}

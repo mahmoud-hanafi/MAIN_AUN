@@ -1,0 +1,137 @@
+<?php
+
+/**
+ * @file
+ * {@inheritdoc}
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\migrate_entities\GetAllFunctions;
+use Drupal\migrate\Row;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ */
+function migrate_entities_help($path, $arg) {
+
+  $base_url = \Drupal::request()->getSchemeAndHttpHost();
+  $drupalOrgPath = Url::fromUri('https://www.drupal.org/sandbox/sourdrup/2828039');
+  $modulePageUriLink = $base_url . '/admin/modules';
+  $output = '';
+
+  switch ($path) {
+    case 'help.page.migrate_entities':
+      $output .= '<h3>' . t('ABOUT') . '</h3>';
+      $output .= t('<p>Migrate Entities is a module which allows end users to import entities(node) using CSV files. This module is depended on Simple Node Importer module which provides a Flexible Mapping UI to map CSV columns to it\'s corresponding entity field. For more information, see the online handbook entry for <a href="@simplenodeimporter">Simple Node Importer</a> module.</p>', ['@simplenodeimporter' => $drupalOrgPath->getUri()]);
+      $output .= '<h3>' . t('USES') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt><strong>' . t('Enabling module') . '</strong></dt>';
+      $output .= t('<dd>This module get install in the same manner as other module does. You need to download it and save it into "/modules" directory and enable it from the <a href="@modulePageUriLink">Module</a> Page</dd>', ['@modulePageUriLink' => $modulePageUriLink]);
+      $output .= '<dt><strong>' . t('Working with Migrate Entities') . '</strong></dt>';
+      $output .= '<dd>' . t('Working with Migrate Entities is very easy. As we know, It is depended on Simple Node Importer module. After installing this module, you will see extra submit button for migration on confirmation page.') . '</dd>';
+  }
+  return render($output);
+}
+
+/**
+ * Implements hook_foo().
+ */
+function migrate_entities_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  if ($form_id == 'simple_node_confirm_importing_form') {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $newPath = str_replace('importing', 'mapping', $current_path);
+    $form['help'] = [
+      '#type' => 'item',
+      '#title' => t('Migration API'),
+      '#markup' => t('Your content will be migrated from migration API.'),
+      '#prefix' => '<div class="migration">',
+    ];
+    $form['submit'] = [
+      '#value' => t('Migration Submit'),
+      '#type' => 'submit',
+      '#submit' => ['migrate_entities_submit'],
+    ];
+    $form['cancel'] = [
+      '#type' => 'item',
+      '#markup' => '<a href="' . $newPath . '" class="button" data-drupal-selector="edit-cancel" id="edit-cancel">Cancel</a>',
+      '#suffix' => '</div>',
+    ];
+    $form['#attached']['library'][] = 'migrate_entities/migrate_entities_form';
+
+    return $form;
+  }
+
+}
+
+/**
+ * Call migration class to register migration.
+ */
+function migrate_entities_submit(&$form, FormStateInterface &$form_state) {
+  GetAllFunctions::migrationSubmit($form_state);
+}
+
+/**
+ * Implements hook_foo().
+ */
+function migrate_entities_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  $sessionVariable = [];
+  $bundleType = '';
+  $field_definitions = [];
+  $dateKey = [];
+
+  $sessionVariable = \Drupal::service('user.private_tempstore')->get('simple_node_importer');
+  $bundleType = $sessionVariable->get('bundle_type');
+
+  foreach ($row->getSource() as $key => $value) {
+    $field_definitions = GetAllFunctions::FieldTermType($key, $bundleType);
+    // Check if field type id datetime.
+    if ($field_definitions['field_type'] == 'datetime') {
+      if ($row->hasSourceProperty($key)) {
+        if (!empty($row->getSourceProperty($key))) {
+          $dateformat = $row->getSourceProperty($key);
+          $findColon = strpos($dateformat, ";");
+          if ($findColon !== FALSE) {
+            $dateExplode = explode(";", $dateformat);
+            // Check if date field value is more then one.
+            $convertDate = [];
+            if (!empty($dateExplode)) {
+              foreach ($dateExplode as $dateKey => $dateValue) {
+                // Covert the field date into database date time structure.
+                $date = date_format(date_create($dateValue), 'Y-m-d\TH:i:s');
+                if (!empty($date)) {
+                  $convertDate[] = $date;
+                }
+              }
+              if (!empty($convertDate)) {
+                $dateVal = implode(';', $convertDate);
+                $row->setSourceProperty($key, $dateVal);
+              }
+            }
+          }
+          else {
+            // Convert single field date into database date time structure.
+            $dateformat = $row->getSourceProperty($key);
+            $newDateFormat = date_format(date_create($dateformat), 'Y-m-d\TH:i:s');
+            if (!empty($newDateFormat)) {
+              $row->setSourceProperty($key, $newDateFormat);
+            }
+          }
+        }
+      }
+    }
+
+    if ($field_definitions['field_type'] == 'image') {
+      if ($row->hasSourceProperty($key)) {
+        if (!empty($row->getSourceProperty($key))) {
+          $imageformat = $row->getSourceProperty($key);
+          $row->setSourceProperty($key, $imageformat);
+        }
+      }
+    }
+  }
+}

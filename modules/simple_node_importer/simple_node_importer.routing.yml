@@ -1,0 +1,88 @@
+simple_node_importer.config_form:
+  path: /admin/config/development/snodeimport
+  defaults:
+    _title: 'Simple Node Import Settings'
+    _form: \Drupal\simple_node_importer\Form\SimpleNodeImporterConfigForm
+  requirements:
+    _permission: 'admin access simple_node_importer'
+
+simple_node_importer.node_mapping_form:
+  path: '/nodeimport/{option}/{node}/mapping'
+  defaults:
+    _form: \Drupal\simple_node_importer\Form\SimpleNodeImporterMappingForm
+  options:
+    parameters:
+      node:
+        type: entity:node
+  requirements:
+    _permission: 'admin access simple_node_importer'
+
+simple_node_importer.user_mapping_form:
+  path: '/nodeimport/{option}/{node}/usermapping'
+  defaults:
+    _form: \Drupal\simple_node_importer\Form\SimpleUserImporterMappingForm
+  options:
+    parameters:
+      node:
+        type: entity:node
+  requirements:
+    _permission: 'admin access simple_node_importer'
+
+simple_node_importer.user_confirmation_form:
+  path: '/nodeimport/{option}/{node}/userconfirm'
+  defaults:
+    _form: \Drupal\simple_node_importer\Form\SimpleUserConfirmImportForm
+  options:
+    parameters:
+      node:
+        type: entity:node
+  requirements:
+    _permission: 'admin access simple_node_importer'
+
+simple_node_importer.import_user:
+  path: '/simplenode/{option}/{node}/delete'
+  defaults:
+    _title: 'User Import'
+    _controller: '\Drupal\simple_node_importer\Controller\UserImportController::userImport'
+  requirements:
+    _permission: 'admin access simple_node_importer'
+
+simple_node_importer.confirm_importing:
+  path: '/nodeimport/{type}/{node}/importing'
+  defaults:
+    _title: 'Confirm Content Import for {type}'
+    _form: \Drupal\simple_node_importer\Form\SimpleNodeConfirmImportForm
+  options:
+    parameters:
+      node:
+        type: entity:node
+  requirements:
+    _permission: 'admin access simple_node_importer'
+
+simple_node_importer.delete_node:
+  path: '/simplenode/{option}/{node}/delete'
+  defaults:
+    _title: 'Confirm Delete'
+    _controller: '\Drupal\simple_node_importer\Controller\NodeImportController::snpDeleteNode'
+  requirements:
+    _permission: 'admin access simple_node_importer'
+    
+simple_node_importer.node_resolution_center:
+  path: /nodeimporter/resolution-center
+  defaults:
+    _title: 'Resolution Center'
+    _controller: '\Drupal\simple_node_importer\Controller\NodeImportController::viewResolutionCenter'
+  requirements:
+    _permission: 'admin access simple_node_importer'
+
+simple_node_importer.resolution_center_operations:
+  path: '/nodeimporter/resolution-center/{node}/{op}'
+  defaults:
+    _title_callback: '\Drupal\simple_node_importer\Controller\NodeImportController::resolutionCenterTitleCallback'
+    _controller: '\Drupal\simple_node_importer\Controller\NodeImportController::resolutionCenterOperations'
+  options:
+    parameters:
+      node:
+        type: entity:node
+  requirements:
+    _permission: 'admin access simple_node_importer'

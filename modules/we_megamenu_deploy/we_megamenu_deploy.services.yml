@@ -1,0 +1,7 @@
+services:
+  we_megamenu_deploy.exporter:
+    class: Drupal\we_megamenu_deploy\Exporter
+    arguments: ['@settings', '@database', '@default_content.scanner']
+  we_megamenu_deploy.importer:
+    class: Drupal\we_megamenu_deploy\Importer
+    arguments: ['@settings', '@database', '@default_content.scanner']

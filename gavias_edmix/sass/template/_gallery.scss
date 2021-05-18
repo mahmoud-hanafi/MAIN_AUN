@@ -1,0 +1,73 @@
+//== Gallery Block ==
+.gallery-block{
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  &:after{
+    content: "";
+    @include size(100%, 100%);
+    @include transition(all 0.35s);
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    @include opacity(0);
+  }
+  .gallery-content{
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    @include opacity(0);
+    z-index: 99;
+    padding: 0 15px;
+    a{
+      color: $white;
+      @include transition(all 0.35s);
+      font-size: 14px;
+      &:hover{
+        color: $theme-color;
+      }
+    }
+  }
+  .images{
+    overflow: hidden;
+    position: relative;
+    img{
+      @include transition(all 5s);
+    }
+  }
+  a.zoomGallery{ 
+    position: absolute;
+    @include size(32px, 32px);
+    top: 50%;
+    left: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+    z-index: 99;
+    color: $white;
+    font-size: 20px;
+    line-height: 1;
+    @include opacity(0);
+    @media(max-width: 680px){
+      display: none;
+    }
+    &:hover{
+      color: $theme-color;
+    }
+  }
+  &:hover{
+    .gallery-content{
+      @include opacity(1);
+      bottom: 0;
+    }
+    &:after{
+      @include opacity(1);
+    }
+    a.zoomGallery{
+      @include opacity(1);
+    }
+  }
+}

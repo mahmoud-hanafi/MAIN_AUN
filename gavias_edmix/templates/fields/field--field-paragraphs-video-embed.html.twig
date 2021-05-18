@@ -1,0 +1,10 @@
+<div class="paragraphs-video-embed media-wrapper">
+   {% set i = 0 %}
+   {%- for item in items -%}
+      {% set i = i + 1 %}
+      <video class="video-embed" style="max-width:100%;" id="player-{{random()}}"  preload="none" controls playsinline webkit-playsinline>
+         <source src="{{item.content['#context'].value}}">
+      </video>
+   {%- endfor -%}
+</div>
+

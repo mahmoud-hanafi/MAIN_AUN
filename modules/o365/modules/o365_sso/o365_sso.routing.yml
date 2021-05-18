@@ -1,0 +1,24 @@
+
+o365_sso.login_controller_login:
+  path: '/o365/login'
+  defaults:
+    _controller: '\Drupal\o365_sso\Controller\LoginController::login'
+    _title: 'Login to your Office 365 environment'
+  requirements:
+    _permission: 'access o365_sso login page'
+
+o365_sso.login_callback_controller_callback:
+  path: '/o365/callback'
+  defaults:
+    _controller: '\Drupal\o365_sso\Controller\LoginCallbackController::callback'
+    _title: 'Login callback'
+  requirements:
+    _permission: 'access o365_sso login page'
+
+o365_sso.user_login_controller_login:
+  path: '/o365_sso/login'
+  defaults:
+    _controller: '\Drupal\o365_sso\Controller\UserLoginController::login'
+    _title: 'Login drupal user'
+  requirements:
+    _permission: 'access content'

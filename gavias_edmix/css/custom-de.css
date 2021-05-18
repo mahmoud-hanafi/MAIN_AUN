@@ -1,0 +1,25 @@
+@media (min-width: 1200px){
+	.main-menu .navigation .gva_menu > li {
+		padding: 0px 6px 1px 1px;
+		font-size: 13px;
+	}
+}
+
+.navigation .gva_menu > li > a {
+  font-size: 13px;
+}
+
+#top_bar_lang {
+    padding-left: 40px;
+}
+header .area-main-menu .navigation ul.gva_menu {
+	text-align: center;
+}
+@media (max-width:1250px)  {
+		.main-menu .navigation .gva_menu > li {
+			padding: 0 9px;
+		}
+		#block-mainnavigation-3 .gva-navigation .gva_menu_main > li > a {
+			font-size: 10px;
+		}
+}

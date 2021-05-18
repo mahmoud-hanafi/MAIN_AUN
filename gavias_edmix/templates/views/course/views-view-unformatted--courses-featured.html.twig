@@ -1,0 +1,28 @@
+<div class="view-courses-featured-2"> 
+  <div class="tab-lists-content">
+    <div class="content-inner">  
+      <div class="tab-carousel-list-here slick-slider"> 
+        {% for row in rows %}
+            <div class="slick-slide">{{ row.content }}</div>
+         {% endfor %}
+      </div>
+    </div>  
+  </div>  
+  <div class="carousel-nav">
+    <div class="content-inner">
+      <div class="tab-carousel-nav slick-slider">
+        {% for row in rows %}
+          {% set tmp_content %}
+            {{ row.content }}
+          {% endset %}   
+          <div class="slick-slide">
+            <div class="info">
+              <div class="left"><img src="{{ tmp_content|split('<div class="cthumbnail">')[1]|striptags|trim|raw }}" alt="" /></div>
+              <div class="right">{{ tmp_content|split('<div class="cthumbnail">')[3]|striptags|trim|raw }}</div>
+            </div>
+          </div>
+         {% endfor %}
+      </div>
+    </div>
+   </div>    
+</div>

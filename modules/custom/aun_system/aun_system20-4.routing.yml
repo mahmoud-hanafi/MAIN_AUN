@@ -1,0 +1,74 @@
+
+aun_system.print_test_msg:
+  path: 'print/test/msg'
+  defaults:
+    _controller: '\Drupal\aun_system\Controller\print_test_message::print_msg'
+    _title: 'Print Test Message'
+  requirements:
+    _permission: 'access content'
+
+
+aun_system.news_intagration:
+  path: 'handle/news/intagration'
+  defaults:
+    _controller: '\Drupal\aun_system\Controller\news_intagration::handle_news_intagration'
+    _title: 'Print News'
+  requirements:
+    _permission: 'access content'
+
+
+aun_system.events_intagration:
+  path: 'handle/events/intagration'
+  defaults:
+    _controller: '\Drupal\aun_system\Controller\events_intagration::handle_events_intagration'
+    _title: 'Print Events'
+  requirements:
+    _permission: 'access content'
+
+
+
+aun_system.news_delete:
+  path: 'handle/news/delete'
+  defaults:
+    _controller: '\Drupal\aun_system\Controller\news_delete::handle_news_delete'
+    _title: 'Print News'
+  requirements:
+    _permission: 'access content'
+
+
+aun_system.fast_category_search:
+  path: 'get/category/links'
+  defaults:
+    _controller: '\Drupal\aun_system\Controller\fast_category_search::get_fast_category_search'
+    _title: 'Print Test Message'
+  requirements:
+    _permission: 'access content'
+
+
+aun_system.build_form_test:
+  path: 'test/form'
+  defaults:
+    _form: '\Drupal\aun_system\Form\build_test_form'
+    _title: 'Print Test form'
+  requirements:
+    _permission: 'access content'
+
+
+
+aun_system.build_results_import_form:
+  path: 'import/results'
+  defaults:
+    _form: '\Drupal\aun_system\Form\build_results_import_form'
+    _title: 'Upload Student Results'
+  requirements:
+    _permission: 'access content'
+
+
+aun_system.autocomplete.student:
+  path: '/admin/aun_system/autocomplete/student'
+  defaults:
+    _controller: '\Drupal\aun_system\Controller\AutoCompleteController::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'
+

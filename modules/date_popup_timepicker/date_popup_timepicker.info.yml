@@ -1,0 +1,13 @@
+name: 'Date popup timepicker'
+description: 'Adds a new timepicker option for datetime fields, providing a better ui for the timepicker.'
+# core: 8.x
+type: module
+package: Date/Time
+
+dependencies:
+  - drupal:datetime
+# Information added by Drupal.org packaging script on 2018-11-16
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'date_popup_timepicker'
+datestamp: 1542337991

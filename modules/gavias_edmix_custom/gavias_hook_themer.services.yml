@@ -1,0 +1,11 @@
+services:
+  gavias_hook_themer.twig_extension:
+    class: Drupal\gavias_hook_themer\TwigExtension
+    arguments: ['@entity_type.manager', '@token', '@config.factory', '@current_route_match', '@menu.link_tree', '@menu.active_trail']
+    tags:
+      - { name: twig.extension }
+
+  string_translator.gavias_hook_themer:
+    class: Drupal\gavias_hook_themer\StringOverridesTranslation
+    tags:
+      - { name: string_translator, priority: 15 }

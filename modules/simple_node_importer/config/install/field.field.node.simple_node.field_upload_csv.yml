@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upload_csv
+    - node.type.simple_node
+  module:
+    - file
+id: node.simple_node.field_upload_csv
+field_name: field_upload_csv
+entity_type: node
+bundle: simple_node
+label: Upload CSV
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_field: true
+  display_default: true
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: csv
+  max_filesize: '20M'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

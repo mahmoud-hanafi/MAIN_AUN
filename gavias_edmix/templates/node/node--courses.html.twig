@@ -1,0 +1,101 @@
+{%
+  set classes = [
+    'node',
+    'node-detail',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<!-- Start Display article for teaser page -->
+{% if view_mode == 'teaser' %} 
+  <div class="course-block">      
+  <div class="course-block-inner">
+    <div class="image lightGallery">
+      {{ content.field_course_images }}
+      {% if video_link %}
+        <a class="video-link popup-video" href="{{ video_link }}"><i class="fa fa-video-camera"></i></a>
+      {% endif %}
+    </div>
+    <div class="course-content">
+      <div class="content-inner">
+        <h4 class="title"><a href="{{ product_url }}" rel="bookmark">{{ title }}</a> </h4> 
+        <div class="teacher">{{content.field_course_department}}</div>
+      </div>   
+      <div class="content-action">
+        <div class="left"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o"></i></span> {{ content.field_course_date }}{{  }}</a></div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+{% elseif view_mode == 'teaser_2' %}
+
+{% else %}
+
+<article{{ attributes}}>
+  <div class="single-course">
+    <div class="image course-images lightGallery">
+      {% if content.field_course_image %}
+        {{ content.field_course_image }} 
+      {% endif %}
+    </div>
+    
+    <div class="course-content">
+      <h1{{ title_attributes.addClass('post-title') }}>{{ content.title }}</h1>
+       
+      <div class="course-meta clearfix">
+        {% if product.field_course_teacher %}
+          <div class="meta-item">
+            <div class="icon icon-teacher"></div>
+            <div class="content">
+              <div class="lab">{{ 'Department'|t }}</div>
+              <div class="val">{{ content.field_course_department }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+    
+        {% if product.field_number_of_hours %}
+          <div class="meta-item">
+            <div class="icon icon-duration"></div>
+            <div class="content">
+              <div class="lab">{{ 'Duration Time'|t }}</div>
+              <div class="val">{{ content.field_number_of_hours }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product.field_course_level %}
+          <div class="meta-item">
+            <div class="icon icon-level"></div>
+            <div class="content">
+              <div class="lab">{{ 'Level'|t }}</div>
+              <div class="val">{{ content.field_course_level }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="post-content">
+        <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+          {{- product|without('field_course_level', 'field_course_features', 'field_course_featured', 'field_course_teacher', 'field_course_duration', 'field_course_images', 'comment', 'field_course_video', 'variation_price', 'variations' ,'field_course_category', 'field_course_comment') -}}
+        </div>
+      </div>
+        
+      <div class="course-features">
+        {{ content.body }}
+      </div>
+
+      
+    
+
+    </div>
+  </div>
+</article>
+{% endif %}

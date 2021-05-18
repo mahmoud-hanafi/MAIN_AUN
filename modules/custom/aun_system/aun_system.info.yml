@@ -1,0 +1,8 @@
+name: AUN System
+type: module
+description: 'AUN System'
+core: 8.x
+package: AUN System
+dependencies:
+  - node
+  - user

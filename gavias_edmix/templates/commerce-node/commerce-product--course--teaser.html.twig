@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="course-block">      
+  <div class="course-block-inner">
+    <div class="image lightGallery">
+      {{ product.field_course_images }}
+      {% if video_link %}
+        <a class="video-link popup-video" href="{{ video_link }}"><i class="fa fa-video-camera"></i></a>
+      {% endif %}
+    </div>
+    <div class="course-content">
+      <div class="content-inner">
+        <h4 class="title"><a href="{{ product_url }}" rel="bookmark">{{ title }}</a> </h4> 
+        <div class="teacher"><i class="fa fa-map-marker"></i>{{product.field_course_department}}</div>
+		<div class="teacher"><i class="fa fa-clock-o"></i> {{product.field_course_date}}</div>
+      </div>   
+      <div class="content-action">
+        <div class="left"><a href="{{ product_url }}">{{ 'Apply now'|t }}</a></div>
+      </div> 
+    </div>
+  </div>
+</div>
+        

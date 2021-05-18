@@ -1,0 +1,16 @@
+{
+  "require": {
+     "commerceguys/enum": {
+      "version" : "source",
+      "url": "https://github.com/commerceguys/enum/archive/v1.0.zip"
+    },
+	"commerceguys/intl": {
+      "version" : "source",
+      "url": "https://github.com/commerceguys/addressing/archive/master.zip"
+    },
+    "commerceguys/addressing": {
+      "version" : "source",
+      "url": "https://github.com/commerceguys/addressing/archive/master.zip"
+    }
+  }
+}

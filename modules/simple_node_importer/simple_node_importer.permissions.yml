@@ -1,0 +1,8 @@
+'admin access simple_node_importer':
+  title: 'Admin access Simple Node Importer Dashboard page.'
+'access admin simple_node_importer settings':
+  title: 'Access Simple Importer settings page.'
+'access simple_node_importer':
+  title: 'Access Simple Node Import.'
+'access simple_node_importer manage uploads':
+  title: 'Access Simple Importer manage uploads page.'

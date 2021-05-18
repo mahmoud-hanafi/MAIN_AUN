@@ -1,0 +1,6 @@
+
+o365_outlook_mail:
+  version: 1.x
+  css:
+    component:
+      static/css/o365_outlook_mail.css: {}

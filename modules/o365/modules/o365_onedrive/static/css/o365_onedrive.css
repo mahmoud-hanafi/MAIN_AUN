@@ -1,0 +1,13 @@
+.item-list ul .o365__links {
+  padding-left: 30px;
+}
+
+.o365__links__folder {
+  background-image: url('../images/folder.png');
+  background-repeat: no-repeat;
+}
+
+.o365__links__file {
+  background-image: url('../images/file.png');
+  background-repeat: no-repeat;
+}

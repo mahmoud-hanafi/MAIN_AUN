@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="course-block featured-course-2 clearfix">      
+   <div class="course-block-inner">
+      <div class="left">
+        <div class="image lightGallery">
+          {{ product.field_course_images }}
+          {% if video_link %}
+            <a class="video-link popup-video" href="{{ video_link }}"><i class="fa fa-video-camera"></i></a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="right">
+        <div class="course-content"> 
+          <div class="featured-label">{{ 'FEATURED PRODUCT'|t }}</div>  
+          <div class="course-info"><h4 class="title"><a href="{{ product_url }}" rel="bookmark">{{ title }}</a></h4></div>
+          <div class="hidden"><div class="cthumbnail">{{ title }}</div><div class="cthumbnail"></div></div>
+          <div class="teacher">{{product.field_course_teacher}}</div>
+          <div class="course-info"><div class="summary"> {{product.body}}</div></div>
+          <div class="course-features">{{product.field_course_features}}</div>
+          <div class="course-bottom">
+            <div class="bottom-left"><div class="course-price">{{ product.variation_price }} </div></div>
+            <div class="bottom-right"><a class="course-apply" href="{{ product_url }}">{{ 'Apply now'|t }}</a></div> 
+          </div>
+        </div>
+      </div>  
+   </div>
+   
+</div>

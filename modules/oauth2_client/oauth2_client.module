@@ -1,0 +1,6 @@
+<?php
+
+/**
+ * @file
+ * Holds hooks for the OAuth2 Client module.
+ */

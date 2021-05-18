@@ -1,0 +1,16 @@
+
+.navigation .gva_menu > li > a {
+  font-size: 12px;
+}
+header .area-main-menu .navigation ul.gva_menu {
+	text-align: center;
+}
+#top_bar_lang {
+    padding-left: 40px;
+}
+
+@media (max-width: 1200px){
+	.navigation .gva_menu > li > a {
+	  font-size: 11px;
+	}
+}

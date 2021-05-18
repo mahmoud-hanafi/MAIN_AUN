@@ -1,0 +1,22 @@
+<div class="sp-slide"> 
+	<div class="sp-image"> <img src="../src/images/blank.gif" 
+		data-src="{{ background_img }}"/>
+	</div> 			 
+  {% if layers is not empty %}
+    {% for layer in layers %}
+      {% if layer.value is not empty %}
+        <div class="sp-layer sp-white sp-padding"
+           data-horizontal="{{ layer.attributes.horizontal }}" 
+           data-vertical="{{ layer.attributes.vertical }}"
+           data-show-delay="{{ layer.attributes.show_delay }}"
+           data-hide-delay="{{ layer.attributes.hide_delay }}"
+           data-show-transition="{{ layer.attributes.show_transition }}"
+           data-hide-transition="{{ layer.attributes.hide_transition }}">
+           {{ layer.value }} 
+        </div>
+      {% endif %}
+    {% endfor %}  
+  {% endif %}
+</div>   
+
+
